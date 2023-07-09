@@ -1,33 +1,35 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import AuthLayout from './Layouts/authLayout'
+import PrivateLayout from './Layouts/privateLayout'
+import LoginPage from './pages/auth/Login'
 function App() {
-  const [count, setCount] = useState(0)
 
+
+  const ForgetPassword = () => <h2>login ForgetPassword</h2>
+  const ResetPassword = () => <h2>login ResetPassword</h2>
+  const Dashboard = () => <h2>dashboard </h2>
+  const Computers = () => <h2>Computers</h2>
+  const users = () => <h2>users</h2>
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Navigate replace to="/login" />} />
+          <Route path='/' element={<AuthLayout />}>
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/forgetPassword' element={<ForgetPassword />} />
+            <Route path='/resetPassword' element={<ResetPassword />} />
+          </Route>
+          <Route element={<PrivateLayout />}>
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/computers' element={<Computers />} />
+            <Route />
+          </Route>
+        </Routes>
+
+
+      </BrowserRouter>
     </>
   )
 }
