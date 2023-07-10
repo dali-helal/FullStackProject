@@ -1,6 +1,12 @@
-import { Outlet } from "react-router-dom"
+import { Navigate, Outlet } from "react-router-dom"
 import illustration from "../assets/illustration.png"
+import { useStateContext } from "../contexts/authContext";
 const AuthLayout = () => {
+
+    const { token } = useStateContext()
+    if (token) {
+        return <Navigate to="/dashboard" />
+    }
     return (
         <>
 
