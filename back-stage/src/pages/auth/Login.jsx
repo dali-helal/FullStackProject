@@ -1,7 +1,6 @@
-import { Stack, Button, TextField, FormControl, InputLabel, MenuItem, Select } from "@mui/material"
+import { Button, TextField } from "@mui/material"
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa"
 import { useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa"
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png"
 import axiosClient from "../../axios-client";
@@ -34,12 +33,12 @@ const LoginPage = () => {
 
 
     return (
-        <div className="login-form" onSubmit={handleSubmit}>
+        <div className="login-form" >
             <div className="logo">
                 <img src={logo} alt="logo" />
             </div>
 
-            <form className="form-container">
+            <form className="form-container" onSubmit={handleSubmit}>
                 <TextField
                     label="Email"
                     type="email"

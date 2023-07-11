@@ -6,11 +6,13 @@
     .auth-outlet {
         width: 50%;
         display: flex;
+
         .login-form {
             width: 100%;
             display: flex;
             align-items: center;
             flex-direction: column;
+
             .logo {
                 img {
                     transform: scale(0.9);

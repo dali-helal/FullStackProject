@@ -4,13 +4,13 @@ import AuthLayout from './Layouts/authLayout'
 import PrivateLayout from './Layouts/privateLayout'
 import LoginPage from './pages/auth/Login'
 import { ContextProvider } from './contexts/authContext'
+import Computers from './pages/Computers/Computers'
 function App() {
 
 
   const ForgetPassword = () => <h2>login ForgetPassword</h2>
   const ResetPassword = () => <h2>login ResetPassword</h2>
   const Dashboard = () => <h2>dashboard </h2>
-  const Computers = () => <h2>Computers</h2>
   const Users = () => <h2>Users</h2>
   return (
     <>

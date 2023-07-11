@@ -10,7 +10,7 @@ const PrivateLayout = () => {
     if (!token) {
         return <Navigate to="/login" />
     }
-    
+
     return (
         <>
             <section className="private-routes-section">
